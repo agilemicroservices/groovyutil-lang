@@ -1,0 +1,22 @@
+/*
+ * IntelliJ DSL definition supporting GroovyUtil's scripting enhancements.
+ */
+
+def cncScriptContext = context(scope: scriptScope(), filetypes: ["groovy"])
+
+
+contributor([cncScriptContext]) {
+
+    def delegateClasses = ["org.groovyutil.file.FileUtility",
+                           "org.groovyutil.email.EmailUtility",
+                           "org.groovyutil.ftp.FTPUtility",
+                           "org.groovyutil.http.HttpUtility",
+                           "org.groovyutil.log.LogUtility",
+                           "org.groovyutil.pgp.PgpUtility",
+                           "org.groovyutil.sql.SqlUtility",
+                           "org.groovyutil.property.PropertyUtility"]
+
+    delegateClasses.each {
+        delegatesTo(findClass(it))
+    }
+}
