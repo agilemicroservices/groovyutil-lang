@@ -7,14 +7,21 @@ import org.codehaus.groovy.control.CompilePhase
 import org.codehaus.groovy.control.SourceUnit
 import org.codehaus.groovy.transform.ASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
-import org.groovyutil.email.EmailUtility
-import org.groovyutil.file.FileUtility
-import org.groovyutil.ftp.FTPUtility
-import org.groovyutil.http.HttpUtility
-import org.groovyutil.log.LogUtility
-import org.groovyutil.pgp.PgpUtility
-import org.groovyutil.sql.SqlUtility
-import org.groovyutil.property.PropertyUtility
+import org.jvmscript.cli.CliUtility
+import org.jvmscript.datetime.DateTimeUtility
+import org.jvmscript.drools.DroolsUtility
+import org.jvmscript.email.EmailUtility
+import org.jvmscript.file.FileUtility
+import org.jvmscript.ftp.FTPUtility
+import org.jvmscript.http.HttpUtility
+import org.jvmscript.jams.JamsUtility
+import org.jvmscript.jira.JiraUtility
+import org.jvmscript.log.LogUtility
+import org.jvmscript.pgp.PgpUtility
+import org.jvmscript.process.ProcessUtility
+import org.jvmscript.property.PropertyUtility
+import org.jvmscript.sql.SqlUtility
+
 import org.hibernate.annotations.SQLUpdate
 
 
@@ -25,7 +32,20 @@ import org.hibernate.annotations.SQLUpdate
 class DefaultImportASTTransformation implements ASTTransformation {
     // list of classes to be statically imported
     private static final Class[] DEFAULT_STATIC_IMPORT_CLASSES = [
-            FileUtility, EmailUtility, FTPUtility, HttpUtility, PgpUtility, SqlUtility, LogUtility, PropertyUtility]
+            CliUtility,
+            DateTimeUtility,
+            DroolsUtility,
+            FileUtility,
+            EmailUtility,
+            FTPUtility,
+            HttpUtility,
+            JamsUtility,
+            JiraUtility,
+            LogUtility,
+            PgpUtility,
+            ProcessUtility,
+            PropertyUtility,
+            SqlUtility ]
 
     @Override
     void visit(ASTNode[] nodes, SourceUnit source) {

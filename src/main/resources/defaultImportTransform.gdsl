@@ -7,14 +7,20 @@ def cncScriptContext = context(scope: scriptScope(), filetypes: ["groovy"])
 
 contributor([cncScriptContext]) {
 
-    def delegateClasses = ["org.groovyutil.file.FileUtility",
-                           "org.groovyutil.email.EmailUtility",
-                           "org.groovyutil.ftp.FTPUtility",
-                           "org.groovyutil.http.HttpUtility",
-                           "org.groovyutil.log.LogUtility",
-                           "org.groovyutil.pgp.PgpUtility",
-                           "org.groovyutil.sql.SqlUtility",
-                           "org.groovyutil.property.PropertyUtility"]
+    def delegateClasses = [ "org.jvmscript.cli.CliUtility",
+                            "org.jvmscript.datetime.DateTimeUtility",
+                            "org.jvmscript.drools.DroolsUtility",
+                            "org.jvmscript.email.EmailUtility",
+                            "org.jvmscript.file.FileUtility",
+                            "org.jvmscript.ftp.FTPUtility",
+                            "org.jvmscript.http.HttpUtility",
+                            "org.jvmscript.jams.JamsUtility",
+                            "org.jvmscript.jira.JiraUtility",
+                            "org.jvmscript.log.LogUtility",
+                            "org.jvmscript.pgp.PgpUtility",
+                            "org.jvmscript.process.ProcessUtility",
+                            "org.jvmscript.property.PropertyUtility",
+                            "org.jvmscript.sql.SqlUtility"  ]
 
     delegateClasses.each {
         delegatesTo(findClass(it))
