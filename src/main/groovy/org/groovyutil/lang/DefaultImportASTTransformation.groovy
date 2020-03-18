@@ -9,10 +9,10 @@ import org.codehaus.groovy.transform.ASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 import org.jvmscript.cli.CliUtility
 import org.jvmscript.datetime.DateTimeUtility
-import org.jvmscript.drools.DroolsUtility
 import org.jvmscript.email.EmailUtility
 import org.jvmscript.file.FileUtility
-import org.jvmscript.ftp.FTPUtility
+import org.jvmscript.ftp.FtpUtility
+import org.jvmscript.sftp.SftpUtility
 import org.jvmscript.http.HttpUtility
 import org.jvmscript.jams.JamsUtility
 import org.jvmscript.jira.JiraUtility
@@ -21,9 +21,7 @@ import org.jvmscript.pgp.PgpUtility
 import org.jvmscript.process.ProcessUtility
 import org.jvmscript.property.PropertyUtility
 import org.jvmscript.sql.SqlUtility
-
-import org.hibernate.annotations.SQLUpdate
-
+import org.jvmscript.amazon.s3.S3Utility
 
 /**
  * Groovy ASTTransformation implementation decorating scripts with static imports for standard utility classes.
@@ -34,10 +32,10 @@ class DefaultImportASTTransformation implements ASTTransformation {
     private static final Class[] DEFAULT_STATIC_IMPORT_CLASSES = [
             CliUtility,
             DateTimeUtility,
-            DroolsUtility,
             FileUtility,
             EmailUtility,
-            FTPUtility,
+            FtpUtility,
+            SftpUtility,
             HttpUtility,
             JamsUtility,
             JiraUtility,
@@ -45,7 +43,8 @@ class DefaultImportASTTransformation implements ASTTransformation {
             PgpUtility,
             ProcessUtility,
             PropertyUtility,
-            SqlUtility ]
+            SqlUtility,
+            S3Utility]
 
     @Override
     void visit(ASTNode[] nodes, SourceUnit source) {

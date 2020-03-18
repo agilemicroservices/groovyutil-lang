@@ -9,10 +9,10 @@ contributor([cncScriptContext]) {
 
     def delegateClasses = [ "org.jvmscript.cli.CliUtility",
                             "org.jvmscript.datetime.DateTimeUtility",
-                            "org.jvmscript.drools.DroolsUtility",
                             "org.jvmscript.email.EmailUtility",
                             "org.jvmscript.file.FileUtility",
-                            "org.jvmscript.ftp.FTPUtility",
+                            "org.jvmscript.sftp.sFtpUtility",
+                            "org.jvmscript.ftp.FtpUtility",
                             "org.jvmscript.http.HttpUtility",
                             "org.jvmscript.jams.JamsUtility",
                             "org.jvmscript.jira.JiraUtility",
@@ -20,7 +20,8 @@ contributor([cncScriptContext]) {
                             "org.jvmscript.pgp.PgpUtility",
                             "org.jvmscript.process.ProcessUtility",
                             "org.jvmscript.property.PropertyUtility",
-                            "org.jvmscript.sql.SqlUtility"  ]
+                            "org.jvmscript.sql.SqlUtility",
+                            "org.jvmscript.amazon.s3.S3Utility"]
 
     delegateClasses.each {
         delegatesTo(findClass(it))
