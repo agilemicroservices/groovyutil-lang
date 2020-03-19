@@ -11,7 +11,7 @@ contributor([cncScriptContext]) {
                             "org.jvmscript.datetime.DateTimeUtility",
                             "org.jvmscript.email.EmailUtility",
                             "org.jvmscript.file.FileUtility",
-                            "org.jvmscript.sftp.sFtpUtility",
+                            "org.jvmscript.sftp.SftpUtility",
                             "org.jvmscript.ftp.FtpUtility",
                             "org.jvmscript.http.HttpUtility",
                             "org.jvmscript.jams.JamsUtility",
