@@ -1,12 +1,12 @@
 group 'org.groovyutil'
-version '1.4-SNAPSHOT'
+version '3.0-SNAPSHOT'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
-sourceCompatibility = JavaVersion.VERSION_11
+sourceCompatibility = JavaVersion.VERSION_17
 
 ext {
     pomFilePath = "${project.projectDir}/build/publications/jar/pom-default.xml"
@@ -15,6 +15,8 @@ ext {
 
 repositories {
     mavenLocal()
+    maven { url 'https://raw.githubusercontent.com/agilemicroservices/maven-repo/master/releases' }
+
     mavenCentral()
 }
 
@@ -69,13 +71,9 @@ def getSignatureFiles = {
     ]
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '6.2.2'
-}
-
 dependencies {
-    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.8'
-    compile group: 'org.jvmscript', name: 'jvmscript', version: '2.0-SNAPSHOT'
+    implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.11'
+    implementation group: 'org.jvmscript', name: 'jvmscript', version: '3.0-SNAPSHOT'
 }
 
 publishing {
