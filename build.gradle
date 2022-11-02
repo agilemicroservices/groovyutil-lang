@@ -72,7 +72,11 @@ def getSignatureFiles = {
 }
 
 dependencies {
-    implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.11'
+// https://mvnrepository.com/artifact/org.apache.groovy/groovy
+// https://mvnrepository.com/artifact/org.codehaus.groovy/groovy
+    implementation group: 'org.codehaus.groovy', name: 'groovy', version: '3.0.13'
+
+
     implementation group: 'org.jvmscript', name: 'jvmscript', version: '3.0-SNAPSHOT'
 }
 
