@@ -22,6 +22,7 @@ import org.jvmscript.process.ProcessUtility
 import org.jvmscript.property.PropertyUtility
 import org.jvmscript.sql.SqlUtility
 import org.jvmscript.amazon.s3.S3Utility
+import org.jvmscript.ssh.SSHUtility
 
 /**
  * Groovy ASTTransformation implementation decorating scripts with static imports for standard utility classes.
@@ -44,7 +45,8 @@ class DefaultImportASTTransformation implements ASTTransformation {
             ProcessUtility,
             PropertyUtility,
             SqlUtility,
-            S3Utility]
+            S3Utility,
+            SSHUtility]
 
     @Override
     void visit(ASTNode[] nodes, SourceUnit source) {
