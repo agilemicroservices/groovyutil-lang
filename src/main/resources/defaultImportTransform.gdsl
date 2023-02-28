@@ -22,7 +22,8 @@ contributor([cncScriptContext]) {
                             "org.jvmscript.property.PropertyUtility",
                             "org.jvmscript.sql.SqlUtility",
                             "org.jvmscript.amazon.s3.S3Utility",
-                            "org.jvmscript.ssh.SSHUtility"]
+                            "org.jvmscript.ssh.SSHUtility",
+                            "org.jvmscript.json.JsonUtility"]
 
     delegateClasses.each {
         delegatesTo(findClass(it))

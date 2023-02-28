@@ -12,6 +12,7 @@ import org.jvmscript.datetime.DateTimeUtility
 import org.jvmscript.email.EmailUtility
 import org.jvmscript.file.FileUtility
 import org.jvmscript.ftp.FtpUtility
+import org.jvmscript.json.JsonUtility
 import org.jvmscript.sftp.SftpUtility
 import org.jvmscript.http.HttpUtility
 import org.jvmscript.jams.JamsUtility
@@ -46,7 +47,8 @@ class DefaultImportASTTransformation implements ASTTransformation {
             PropertyUtility,
             SqlUtility,
             S3Utility,
-            SSHUtility]
+            SSHUtility,
+            JsonUtility]
 
     @Override
     void visit(ASTNode[] nodes, SourceUnit source) {
